@@ -1,0 +1,86 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+.main{  
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    background: #f5f3ec;
+}
+
+nav{
+    height: 100vh;
+    width: 280px;
+    overflow: hidden;
+    background: #2a3b42;
+    transition: width 0.2s linear;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 15px;
+    color: #fff;
+}
+
+.logo b{
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.rol{
+    text-align: center;
+    color: #fff;
+}
+
+a{
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    display: table;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.icons-nav{
+    position: relative;
+    width: 60px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.nav-item{
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
+}
+
+a:hover{
+    background: rgb(54,93,111);
+    background: linear-gradient(90deg, rgba(54,93,111,1) 0%, rgba(87,132,148,1) 50%, rgba(142,162,158,1) 100%);
+    color: #fff;
+    transition: all .5s ease;
+    border-left: 10px solid #2a3b42;
+}
+
+/* nav:hover{
+    width: 250px;
+    transition: all 0.5s ease;
+} */
+
+.main .contentDashboard{   
+    width: 100%;
+    flex-grow: 1;
+    background-color: #f5f3ec;
+    color: #2a3b42;
+}
