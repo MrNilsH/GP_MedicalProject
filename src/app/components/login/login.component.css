@@ -1,0 +1,124 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.main{ 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(54,93,111);
+    background: linear-gradient(90deg, rgba(54,93,111,1) 0%, rgba(87,132,148,1) 50%, rgba(142,162,158,1) 100%);
+  
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.formulario-login{
+    background-color: #ebe7dc;
+    border-radius: 18px;
+    height: auto;
+    position: relative;
+}
+
+.formulario-login form #olvidasteContraseña{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.header-login{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.header-login img{
+    position: absolute;
+    top: -70px; 
+    width: 150px;
+}
+
+.title-login{
+    text-align: center;
+    color: #396172;
+    margin-bottom: 10px;
+}
+
+.body-login {
+    padding: 15px;
+}
+
+.body-input{
+    border: 1px solid #c2bcae;
+}
+
+/* FORMULARIO - INPUT */
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #ebe7dc;
+    border: 1px solid #c2bcae;
+    border-radius: 40px;
+    padding: 8px 20px;
+    max-width: 100%;
+}
+
+.input-container .icon {
+    color: #396172; 
+    margin-right: 10px;
+}
+  
+.input-container input {
+    background-color: transparent; 
+    border: none; 
+    outline: none; 
+    color: #396172; 
+    font-size: 16px;
+    width: 100%; 
+}
+  
+.input-container input:focus {
+    outline: none;
+}
+
+.input-container input::placeholder {
+    color: #396172; 
+    opacity: 1; 
+}
+
+/* FORMULARIO - BOTONES */
+
+.btn-neutral {
+    font-weight: bold;
+    background: rgb(54,93,111);
+    background: linear-gradient(90deg, rgba(54,93,111,1) 0%, rgba(87,132,148,1) 50%, rgba(142,162,158,1) 100%);
+    color: #fff;
+}
+
+.btn-neutral:hover {
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.17);
+}
+  
+.btn-neutral:hover, .btn-neutral:focus {
+    background-color: #FFFFFF;
+    color: #396172;
+}
+  
+.btn-round {
+    border-radius: 30px !important;
+    padding: 11px 23px;
+}
+
+.btn-lg {
+    font-size: 1em;
+    border-radius: 0.25rem;
+    padding: 10px 30px;
+}
+
