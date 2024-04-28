@@ -1,8 +1,10 @@
 {
+
   "hash": "6fe6190e",
   "configHash": "c15aa12a",
   "lockfileHash": "f8ba1422",
   "browserHash": "8a65f1ff",
+
   "optimized": {
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
@@ -31,13 +33,20 @@
     "@fortawesome/free-solid-svg-icons": {
       "src": "../../../../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
       "file": "@fortawesome_free-solid-svg-icons.js",
+    "angular-datatables": {
+      "src": "../../../../../node_modules/angular-datatables/fesm2022/angular-datatables.mjs",
+      "file": "angular-datatables.js",
+      "fileHash": "7cfa5d15",
       "fileHash": "44a84f55",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-G3FTWH2I": {
-      "file": "chunk-G3FTWH2I.js"
+    "chunk-XKWNE4EL": {
+      "file": "chunk-XKWNE4EL.js"
+    },
+    "chunk-B35CBZSK": {
+      "file": "chunk-B35CBZSK.js"
     },
     "chunk-AUDQI6TG": {
       "file": "chunk-AUDQI6TG.js"
