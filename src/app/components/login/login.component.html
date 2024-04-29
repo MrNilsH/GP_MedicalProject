@@ -11,19 +11,19 @@
                 <h2><b>Iniciar Sesión</b></h2>
             </div>
 
-            <form action="#">
+            <form [formGroup]="form">
 
                 <div class="body-form m-2">
 
                     <div cas="body-input">
                         <div class="input-container col-12 ">
                             <i class="icon">A</i>
-                            <input type="email" class="form-control" placeholder="Correo Electrónico">
+                            <input type="email" class="form-control" formControlName="email" placeholder="Correo Electrónico">
                         </div>
 
                         <div class="input-container col-12 mt-3">
                             <i class="icon">C</i>
-                            <input type="password" class="form-control" placeholder="Contraseña">
+                            <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
                         </div>
                     </div>
 
@@ -33,7 +33,7 @@
 
                 <div class="bottom-form mt-3 mb-5">
                     <div class="card-footer text-center">
-                        <a href="#" class="btn col-10 btn-neutral btn-round btn-lg">Iniciar Sesión</a>
+                        <a href="#" (click)="login()" type="submit" class="btn col-10 btn-neutral btn-round btn-lg">Iniciar Sesión</a>
                         <a href="/registro" class="btn col-10 mt-2 btn-neutral btn-round btn-lg">Registrarse</a>
                     </div>
                     

@@ -1,59 +1,71 @@
-
 <div class="main">
+  <nav>
+    <ul>
+      <li class="row logo">
+        <fa-icon class="icons-nav" [icon]="faUserCircle"></fa-icon>
+        <div class="col-12">
+          <b>{{ currentUser.nombre }} {{ currentUser.apellido }}</b>
+        </div>
+        <div class="col-12">
+          <p>Paciente</p>
+        </div>
+      </li>
 
-    <nav>
-        <ul>
-            <li class="row logo">
-                <fa-icon class="icons-nav" [icon]="faUserCircle"></fa-icon>
-                <div class="col-12">
-                    <b>Pepito Perez</b>
-                </div>
-                <div class="col-12">
-                    <p>Paciente</p>
-                </div>
-            </li>
-            
-            <li class="mt-5">   
-                <a href="#">
-                    <span class="nav-item"><fa-icon class="icons-nav" [icon]="faHome"></fa-icon>Home</span>
-                </a>
-            </li>
-            <li>   
-                <a href="#">
-                    <span class="nav-item"><fa-icon class="icons-nav" [icon]="faCalendarCheck"></fa-icon>Citas</span>
-                </a>
-            </li>
-            
-            <li>   
-                <a href="#">
-                    <span class="nav-item"><fa-icon class="icons-nav" [icon]="faHistory"></fa-icon>Historial Medico</span>
-                </a>
-            </li>
+      <li class="mt-5">
+        <a href="/dashboard">
+          <span class="nav-item"
+            ><fa-icon class="icons-nav" [icon]="faHome"></fa-icon>Home</span
+          >
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="nav-item"
+            ><fa-icon class="icons-nav" [icon]="faCalendarCheck"></fa-icon
+            >Citas</span
+          >
+        </a>
+      </li>
 
-            <li>   
-                <a href="#">
-                    <span class="nav-item"><fa-icon class="icons-nav" [icon]="faUserCheck"></fa-icon>Autorizaciones</span>
-                </a>
-            </li>
+      <li>
+        <a href="/historialMedico">
+          <span class="nav-item"
+            ><fa-icon class="icons-nav" [icon]="faHistory"></fa-icon>Historial
+            Medico</span
+          >
+        </a>
+      </li>
 
-            <li>   
-                <a href="#">
-                    <span class="nav-item"><fa-icon class="icons-nav" [icon]="faHandshakeAngle"></fa-icon>Ayudas</span>
-                </a>
-            </li>
+      <li>
+        <a href="#">
+          <span class="nav-item"
+            ><fa-icon class="icons-nav" [icon]="faUserCheck"></fa-icon
+            >Autorizaciones</span
+          >
+        </a>
+      </li>
 
-            <li>   
-                <a href="#" class="logout">
-                    <span class="nav-item"><fa-icon class="icons-nav" [icon]="faSignOut"></fa-icon>Cerrar Sesión</span>
-                </a>
-            </li>
+      <li>
+        <a href="#">
+          <span class="nav-item"
+            ><fa-icon class="icons-nav" [icon]="faHandshakeAngle"></fa-icon
+            >Ayudas</span
+          >
+        </a>
+      </li>
 
-        </ul>
-    </nav>
+      <li>
+        <a href="#" class="logout">
+          <span class="nav-item"
+            ><fa-icon class="icons-nav" [icon]="faSignOut"></fa-icon>Cerrar
+            Sesión</span
+          >
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-    <div class="contentDashboard">
-        <router-outlet></router-outlet> 
-    </div>
-
-    
+  <div class="contentDashboard">
+    <router-outlet></router-outlet>
+  </div>
 </div>
