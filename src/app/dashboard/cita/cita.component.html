@@ -1,0 +1,100 @@
+<div class="main">
+
+    <div class="titleCitas mt-4">
+        <div class="oalert info">
+            <span><strong><fa-icon class="icons-nav" [icon]="faCalendarDays"></fa-icon> Programación y Consulta de Citas Medicas.</strong></span>
+        </div>
+    </div>
+
+    <div class="col-12 d-flex justify-content-center">
+        <div class="contentBotones p-4">
+            <button class="btn botonesCRUD col-2" data-bs-toggle="modal" data-bs-target="#modalRegistro">Registrar</button>
+        </div>
+    </div>
+
+    <!-- MODAL REGISTRO -->
+
+    <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><b>Programar Cita</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div *ngIf="citasForm">
+                        <form [formGroup]="citasForm" (ngSubmit)="createItem()" class="formData p-4">
+                            
+                            <div class="mb-3">
+                                <label for="fecha" class="form-label">Fecha de la Cita</label>
+                                <input type="date" class="form-control" id="fecha" formControlName="fecha" aria-describedby="fecha">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="hora" class="form-label">Hora de la Cita</label>
+                                <input type="time" class="form-control" id="hora" formControlName="hora">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="motivo" class="form-label">Motivo de Cita</label>
+                                <textarea  class="form-control" formControlName="motivo" id="motivo" cols="20" rows="10"></textarea>
+                            </div>
+
+                            <div class="col-12 d-flex justify-content-end">
+                                <button type="button" class="btn btn-danger m-2" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" [disabled]="!citasForm.valid" class="btn botonesCRUD m-2"><fa-icon class="icons-nav" [icon]="faCalendarDays"></fa-icon> Programar Cita</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIN MODAL REGISTRO -->
+
+    <section class="col-12 d-flex justify-content-center">
+        <div class="contentCitas p-4">
+            <table id="dataT" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table hover">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID Cita</th>
+                        <th>Fecha y Hora de la Cita</th>
+                        <th>Motivo de la Cita</th>
+                        <th>Doctor / Especialista</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of citas">
+                        <td>
+                            <ng-container *ngIf="item.estado != 'cancelada' && item.estado != 'finalizada' ">
+                                <button type="button"  (click)="confirmCancelarCita(item.id_cita)" class="btn btn-danger m-2" style="padding: 2px 12px 2px 10px;">
+                                    <fa-icon class="icons-nav" [icon]="faCancel"></fa-icon> <b> Cancelar</b> 
+                                </button>
+                            </ng-container> 
+                        </td>
+                        <td>{{ item.id_cita }}</td>
+                        <td>{{ item.fecha}} {{ item.hora }}</td>
+                        <td>{{ item.motivo }}</td>
+                        <td>{{ item.nombre_especialista }} {{ item.apellido_especialista }} Espe. en  {{ item.especialidad}}</td>
+                        <td>
+                            <ng-container *ngIf="item.estado == 'programada' ">
+                                <fa-icon class="icons-nav" style="color: green;" [icon]="faCalendarDays"></fa-icon> {{item.estado}}
+                            </ng-container>
+                            <ng-container *ngIf="item.estado == 'cancelada' ">
+                                <fa-icon class="icons-nav" style="color: red;" [icon]="faCancel"></fa-icon> {{item.estado}}
+                            </ng-container>
+                            <ng-container *ngIf="item.estado == 'finalizada' ">
+                                <fa-icon class="icons-nav" [icon]="faCheckCircle"></fa-icon> {{item.estado}}
+                            </ng-container>
+                          </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+</div>

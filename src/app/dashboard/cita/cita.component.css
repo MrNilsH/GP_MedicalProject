@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.main{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.titleCitas{
+    margin: 10px; 
+
+}
+
+.oalert {
+    width: 90%;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-left-width: 20px;
+    border-radius: 3px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    display: flex;
+}
+  
+.info {
+    border-left-color: #396172;
+    background-color: rgba(91, 192, 222, 0.1);
+}
+  
+.info strong {
+    color: #396172;
+}
+
+.contentCitas{
+    padding: 5px;
+    background-color: #fff;
+    width: 90%;
+    height: auto;
+    margin: 10px;
+}
+
+.botonesCRUD {
+    font-weight: bold;
+    background: #396172;
+    color: #fff;
+}
+
+.botonesCRUD:hover {
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.17);
+}
+
+.botonesCRUD:hover,
+.botonesCRUD:focus {
+    background-color: #1e343d;
+    color: #fff;
+}
+
+.contentBotones{
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
