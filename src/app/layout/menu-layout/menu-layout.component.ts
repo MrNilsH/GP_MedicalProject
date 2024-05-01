@@ -32,7 +32,7 @@ export class LayoutComponent {
 
   currentUser: UserI | null | any = localStorage.getItem("currentUser");
 
-  constructor(private authService: AuthService) {
+  constructor(public authService: AuthService) {
     this.currentUser = this.authService.currentUser(this.currentUser);
   }
 }

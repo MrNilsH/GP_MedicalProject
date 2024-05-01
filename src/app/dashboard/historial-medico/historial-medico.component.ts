@@ -11,12 +11,14 @@ import { ADTSettings } from "angular-datatables/src/models/settings";
 import { DataTablesModule } from "angular-datatables";
 import { AuthService } from "../../components/auth.service";
 import { UserI } from "../../models/user.interface";
-import { DOCUMENT } from "@angular/common";
+import { CommonModule, DOCUMENT } from "@angular/common";
+import { HistorialMedicoService } from "./historial-medico.service";
+import { HistorialMedicoI } from "../../models/historial-medico.interface";
 
 @Component({
   selector: "app-historial-medico",
   standalone: true,
-  imports: [RouterOutlet, FontAwesomeModule, DataTablesModule],
+  imports: [RouterOutlet, FontAwesomeModule, DataTablesModule, CommonModule],
   templateUrl: "./historial-medico.component.html",
   styleUrl: "./historial-medico.component.css",
 })
@@ -24,98 +26,23 @@ export class HistorialMedicoComponent implements OnInit {
   dtOptions: ADTSettings = {};
   dtOptionsDT: ADTSettings = {};
   dtOptionsM: ADTSettings = {};
+
+  historial: HistorialMedicoI[] = [];
   currentUser: UserI | null | any = localStorage.getItem("currentUser");
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    private historialMedicoService:HistorialMedicoService
   ) {
     this.currentUser = this.authService.currentUser(this.currentUser);
   }
 
 
   ngOnInit(): void {
-    this.dtOptions = {
-      columns: [
-        {
-          title: "ID Cita",
-          data: "",
-        },
-        {
-          title: "Fecha Cita",
-          data: "",
-        },
-        {
-          title: "Hora Cita",
-          data: "",
-        },
-        {
-          title: "Motivo - Tema",
-          data: "",
-        },
-        {
-          title: "Especialista",
-          data: "",
-        },
-      ],
-    };
+    this.historialMedicoService.getHistorialMedicoPaciente(this.currentUser.id_paciente).subscribe(res => {
+      this.historial = res;
+    })
 
-    this.dtOptionsDT = {
-      columns: [
-        {
-          title: "Id",
-          data: "",
-        },
-        {
-          title: "Tema de Consulta",
-          data: "",
-        },
-        {
-          title: "Descripción",
-          data: "",
-        },
-        {
-          title: "Diagnostico",
-          data: "",
-        },
-        {
-          title: "Fecha",
-          data: "",
-        },
-        {
-          title: "Estado",
-          data: "",
-        },
-      ],
-    };
-
-    this.dtOptionsM = {
-      columns: [
-        {
-          title: "ID Cita",
-          data: "",
-        },
-        {
-          title: "Nombre Medicamento",
-          data: "",
-        },
-        {
-          title: "Descripción",
-          data: "",
-        },
-        {
-          title: "Indicaciones de Uso",
-          data: "",
-        },
-        {
-          title: "Frecuencia (Horas)",
-          data: "",
-        },
-        {
-          title: "Duración (Dias)",
-          data: "",
-        },
-      ],
-    };
   }
 
   // Iconos FontAwesome

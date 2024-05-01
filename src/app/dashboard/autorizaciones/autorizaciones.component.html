@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="titleCitas mt-4">
+        <div class="oalert info">
+          <span><strong>Autorizaciones de medicamentos</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <section class="col-12 d-flex justify-content-center">
+        <div class="contentCitas p-4">
+          <table
+            id="dataT"
+            datatable
+            [dtOptions]="dtOptions"
+            [dtTrigger]="dtTrigger"
+            class="table hover"
+          >
+            <thead>
+              <tr>
+                <th>Medicamento</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th>Precio</th>
+                <th>Frecuencia</th>
+                <th>Duración</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of medicamentos">
+                <td>{{ item.medicamento }}</td>
+                <td>{{ item.descripcion }}</td>
+                <td>{{ item.estado }}</td>
+                <td>{{ item.precio }}</td>
+                <td>{{ item.frecuencia }}</td>
+                <td>{{ item.duracion }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="titleCitas mt-4">
+        <div class="oalert info">
+          <span><strong>Enfermedades registradas</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <section class="col-12 d-flex justify-content-center">
+        <div class="contentCitas p-4">
+          <table
+            id="dataT2"
+            datatable
+            [dtOptions]="dtOptions2"
+            [dtTrigger]="dtTrigger2"
+            class="table hover"
+          >
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Diagnóstico</th>
+                <th>Fecha</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of enfermedades">
+                <td>{{ item.id_enfermedad }}</td>
+                <td>{{ item.diagnostico }}</td>
+                <td>{{ item.fecha }}</td>
+                <td>{{ item.descripcion }}</td>
+                <td>{{ item.estado }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

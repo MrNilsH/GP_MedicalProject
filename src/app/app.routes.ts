@@ -5,6 +5,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { HistorialMedicoComponent } from './dashboard/historial-medico/historial-medico.component';
 import { CitaComponent } from './dashboard/cita/cita.component';
+import { AutorizacionesComponent } from './dashboard/autorizaciones/autorizaciones.component';
+import { AuthGuard } from './components/auth.guard';
 
 export const routes: Routes = [
     {
@@ -18,6 +20,7 @@ export const routes: Routes = [
     {
         path: '',
         component: LayoutComponent,
+        canActivate: [AuthGuard],
         children: [
             {
                 path: 'dashboard',
@@ -30,6 +33,10 @@ export const routes: Routes = [
             {
                 path: 'cita',
                 component: CitaComponent
+            },
+            {
+                path: 'autorizaciones',
+                component: AutorizacionesComponent
             },
         ]
     },

@@ -37,7 +37,7 @@
       </li>
 
       <li>
-        <a href="#">
+        <a href="/autorizaciones">
           <span class="nav-item"
             ><fa-icon class="icons-nav" [icon]="faUserCheck"></fa-icon
             >Autorizaciones</span
@@ -45,16 +45,7 @@
         </a>
       </li>
 
-      <li>
-        <a href="#">
-          <span class="nav-item"
-            ><fa-icon class="icons-nav" [icon]="faHandshakeAngle"></fa-icon
-            >Ayudas</span
-          >
-        </a>
-      </li>
-
-      <li>
+      <li (click)="authService.logout()">
         <a href="#" class="logout">
           <span class="nav-item"
             ><fa-icon class="icons-nav" [icon]="faSignOut"></fa-icon>Cerrar

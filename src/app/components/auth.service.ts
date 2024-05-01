@@ -17,6 +17,10 @@ export class AuthService {
     return this.httpClient.post<UserI>(`${BASE_URL}/login`, data);
   }
 
+  logout(){
+    localStorage.clear();
+  }
+
   // Método para 'setear' usuario actual
   setCurrentUser(data: any) {
     localStorage.setItem("currentUser", JSON.stringify(data));

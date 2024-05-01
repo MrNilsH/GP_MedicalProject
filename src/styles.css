@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* Ocultar scrollbar */
+body {
+    -ms-overflow-style: none;
+    overflow-x: hidden;
+    position:unset;
+    background-color: inherit;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}

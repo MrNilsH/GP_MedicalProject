@@ -26,17 +26,8 @@ export class LoginComponent {
 
   login() {
     console.log(this.form.value);
-    this.authService.login(this.form.value).subscribe((res) => {
-      console.log(res);
-      if(res.error) {
-        Swal.fire({
-          icon: 'error',
-          title: '<b>Error en autenticación</b>',
-          text: 'Email o contraseña incorrectos. Inténtelo nuevamente, por favor.',
-          confirmButtonText: '<b>Entendido</b>',
-          confirmButtonColor: '#396172'
-        })
-      } else {
+    this.authService.login(this.form.value).subscribe(
+      (res) => {
         this.authService.setCurrentUser(res);
         this.route.navigate(["/dashboard"]);
         Swal.fire({
@@ -45,7 +36,16 @@ export class LoginComponent {
           confirmButtonText: "<b>Entendido</b>",
           confirmButtonColor: "#396172",
         });
+      },
+      (err) => {
+        Swal.fire({
+          icon: "error",
+          title: "<b>Error en autenticación</b>",
+          text: "Email o contraseña incorrectos. Inténtelo nuevamente, por favor.",
+          confirmButtonText: "<b>Entendido</b>",
+          confirmButtonColor: "#396172",
+        });
       }
-    });
+    );
   }
 }

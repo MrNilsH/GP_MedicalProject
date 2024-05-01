@@ -1,0 +1,37 @@
+export interface HistorialMedicoI {
+    historial_id:                 number;
+    cita_id:                      number;
+    cita_fecha:                   Date;
+    cita_hora:                    string;
+    cita_motivo:                  string;
+    cita_estado:                  string;
+    especialista_id:              number;
+    especialista_nombre:          string;
+    especialista_apellido:        string;
+    especialista_especialidad:    string;
+    especialista_telefono:        number;
+    especialista_email:           string;
+    autorizacion_id:              number;
+    autorizacion_fecha_solicitud: Date;
+    autorizacion_estatus:         string;
+    autorizacion_frecuencia:      number;
+    autorizacion_duracion:        number;
+    medicamento_id:               number;
+    medicamento_nombre:           string;
+    medicamento_descripcion:      string;
+    medicamento_precio:           number;
+    enfermedad_id:                number;
+    enfermedad_diagnostico:       string;
+    enfermedad_fecha:             Date;
+    enfermedad_descripcion:       string;
+    enfermedad_estado:            string;
+    paciente_id:                  number;
+    paciente_nombre:              string;
+    paciente_apellido:            string;
+    paciente_fecha_nacimiento:    Date;
+    paciente_direccion:           string;
+    paciente_telefono:            string;
+    paciente_genero:              string;
+    paciente_email:               string;
+    paciente_password:            string;
+}

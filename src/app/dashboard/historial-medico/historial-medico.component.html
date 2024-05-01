@@ -96,7 +96,26 @@
                 datatable
                 [dtOptions]="dtOptions"
                 class="table hover"
-              ></table>
+              >
+              <thead>
+                <tr>
+                    <th>ID Cita</th>
+                    <th>Fecha Cita</th>
+                    <th>Hora Cita</th>
+                    <th>Motivo - Tema</th>
+                    <th>Especialista</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of historial">
+                <td>{{ item.cita_id }}</td>
+                <td>{{ item.cita_fecha }}</td>
+                <td>{{ item.cita_hora }}</td>
+                <td>{{ item.cita_motivo }}</td>
+                <td>{{ item.especialista_nombre }} {{ item.especialista_apellido  }}</td>
+              </tr>
+            </tbody>
+            </table>
             </div>
           </div>
 
@@ -116,7 +135,28 @@
                 [dtOptions]="dtOptionsDT"
                 class="table hover"
                 style="width: 100%"
-              ></table>
+              >
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tema de Consulta</th>
+                <th>Descripción</th>
+                <th>Diagnóstico</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of historial">
+                <td>{{ item.enfermedad_id }}</td>
+                <td>{{ item.cita_motivo }}</td>
+                <td>{{ item.enfermedad_descripcion }}</td>
+                <td>{{ item.enfermedad_diagnostico }}</td>
+                <td>{{ item.enfermedad_fecha }}</td>
+                <td>{{ item.enfermedad_estado }}</td>
+              </tr>
+            </tbody>
+            </table>
             </div>
           </div>
 
@@ -136,7 +176,26 @@
                 [dtOptions]="dtOptionsM"
                 class="table hover"
                 style="width: 100%"
-              ></table>
+              >
+              <thead>
+                <tr>
+                  <th>ID Cita</th>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th>Frecuencia</th>
+                  <th>Duración (Días)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of historial">
+                  <td>{{ item.cita_id }}</td>
+                  <td>{{ item.medicamento_nombre }}</td>
+                  <td>{{ item.medicamento_descripcion }}</td>
+                  <td>{{ item.autorizacion_frecuencia }}</td>
+                  <td>{{ item.autorizacion_duracion }}</td>
+                </tr>
+              </tbody>
+            </table>
             </div>
           </div>
         </div>
